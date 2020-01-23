@@ -6,9 +6,13 @@ const Form = (props) => {
 
     return (
         <div className="form">
-            <form>
-                <label htmlFor="name">Name: </label><input type="text" name="name"></input>
-                <label htmlFor="email">Email: </label><input type="email" name="email"></input>
+            <form action="https://www.wikipedia.com">
+                <label htmlFor="name">Name: </label>
+                <input type="text" name="name"></input>
+                
+                <label htmlFor="email">Email: </label>
+                <input type="email" name="email"></input>
+
                 <select>
                     <option>Front-End Developer</option>
                     <option>Back-End Developer</option>
@@ -16,6 +20,7 @@ const Form = (props) => {
                     <option>UX Specialist</option>
                     <option>SEO expert</option>
                 </select>
+                <button type="submit">Send</button>
             </form>
 
 
