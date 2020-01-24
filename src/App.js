@@ -42,10 +42,10 @@ function App() {
       {
         members.map(member => {
           return(
-            <div className="members">
+            
               <li key={member.id}>{member.name}</li>
               
-            </div>
+            
           )
         })
       }
