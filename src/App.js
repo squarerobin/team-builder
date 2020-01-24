@@ -5,70 +5,82 @@ import Form from './Form'
 
 function App() {
 
-  const [members, setMembers] = useState(
-    [
-     {
-      id : "0",
-      name: "Asterix"
-     },
-     {
-      id : "1",
-      name: "Obelix"
-     },
-     {
-      id : "2",
-      name: "Asuranceturix"
-     },
-     {
-      id : "3",
-      name: "Panoramix"
-     },
-     {
-      id : "4",
-      name: "Ideafix"
-     }
-
-    ]
-  )
+  const [members, setMembers] = useState([
+    {
+      id: "0",
+      name: "Asterix",
+      email: "asterix@gmail.com"
+    },
+    {
+      id: "1",
+      name: "Obelix",
+      email: "obelix@gmail.com"
+    },
+    {
+      id: "2",
+      name: "Asuranceturix",
+      email: "asuranceturix@gmail.com"
+    },
+    {
+      id: "3",
+      name: "Panoramix",
+      email: "panoramix@gmail.com"
+    },
+    {
+      id: "4",
+      name: "Ideafix",
+      email: "ideafix@gmail.com"
+    }
+  ]);
 
   const [memberToEdit, setMemberToEdit] = useState('')
 
-  const editMember = (e) => {
+  const editMember = (member) => {
 
     //debugger;
-    setMemberToEdit();
-
+    setMemberToEdit(member)
+    console.log("Member added to memberToEdit", memberToEdit)
   }
 
 
 
 // ['Asterix', 'Obelix', 'Asuranceturix', 'Panoramix', 'Ideafix']
 
+
   return (
     <div className="App">
-     <ul>
-     
-      {
-        members.map(member => {
-          return (
-            <div className="">
-              <button key={`button-${member.id}`}
-                onChange={e => {
-                  debugger
-                  console.log(`the edit button with key ${member.id}  has been clicked`)
-                }}
-              >edit
-                
-              </button>
-              <li key={member.id}>{member.name}</li>
-            </div>
-          );
-        })
-      }
+    
+    
+    <div className="membersAndEditButtons">
+    <ul>
+    
+    {
       
-      <Form></Form>
+      members.map(member => {
+        return (
+          <div>
+            <button
+              key={`${member}-button`}
+              onClick={e => {
+                e.preventDefault();
+                //debugger;
+                console.log("the edit button : ", member.id);
+                editMember(member);
+              }}
+            >
+              edit
+            </button>
+            <li key={member.id}>{member.name}</li>
+          </div>
+        );
+              
+            })
+          }
+          
+          </ul>
+          </div>
+    <Form></Form>
 
-     </ul>
     </div>
   );
 }

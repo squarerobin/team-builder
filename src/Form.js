@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 
 
 const Form = (props) => {
-    console.log(props)
+    console.log("props is: ", props)
     const  [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [role, setRole] = useState("");
