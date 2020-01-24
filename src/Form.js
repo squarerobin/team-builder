@@ -12,28 +12,29 @@ const Form = (props) => {
 
     return (
       <div className="form">
-        <form onSubmit={e => {
-          e.preventDefault();
-          
-        }
-
-        }>
-          <label htmlFor="name">Name: </label>
+        <form
+          onSubmit={e => {
+            e.preventDefault();
+          }}
+        >
+          <label htmlFor="name" id="name">
+            Name:{" "}
+          </label>
           <input
             type="text"
             name="name"
             onChange={e => {
-              
               setName(e.target.value);
               console.log("name: ", name);
             }}
           ></input>
-          <label htmlFor="email">Email: </label>
+          <label htmlFor="email" id="email">
+            Email:{" "}
+          </label>
           <input
             type="email"
             name="email"
             onChange={e => {
-               
               setEmail(e.target.value);
               console.log("email: ", email);
             }}

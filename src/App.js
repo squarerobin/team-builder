@@ -31,6 +31,15 @@ function App() {
     ]
   )
 
+  const [memberToEdit, setMemberToEdit] = useState('')
+
+  const editMember = (e) => {
+
+    //debugger;
+    setMemberToEdit();
+
+  }
+
 
 
 // ['Asterix', 'Obelix', 'Asuranceturix', 'Panoramix', 'Ideafix']
@@ -41,12 +50,19 @@ function App() {
      
       {
         members.map(member => {
-          return(
-            
+          return (
+            <div className="">
+              <button key={`button-${member.id}`}
+                onChange={e => {
+                  debugger
+                  console.log(`the edit button with key ${member.id}  has been clicked`)
+                }}
+              >edit
+                
+              </button>
               <li key={member.id}>{member.name}</li>
-              
-            
-          )
+            </div>
+          );
         })
       }
       
