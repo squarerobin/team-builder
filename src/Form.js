@@ -1,22 +1,34 @@
-import React, {useState} from 'react'
+import React, { useState, useEffect } from "react";
+import axios from 'axios'
+
 
 
 const Form = (props) => {
     console.log("props is: ", props)
     const  [name, setName] = useState('')
     const [email, setEmail] = useState('')
-    const [role, setRole] = useState("");
+    const [role, setRole] = useState('');
+/* useEffect((e) =>  {
+    const onSubmitHandler = () => {
+   debugger;
 
-       
+  
+    setMember(...members, member)
+    axios.post("/", { name, email, role });
 
+    }
+}, [email,name, role, onSubmitHandler])
+   
+  */
+
+      console.log('members: ', props.members)
 
     return (
       <div className="form">
         <form
-          onSubmit={e => {
-            e.preventDefault();
-          }}
-        >
+          onClick={(e) =>  e.preventDefault}>
+        
+    
           <label htmlFor="name">Name: </label>
           <input
             type="text"
@@ -54,8 +66,9 @@ const Form = (props) => {
           </select>
           <button
             type="submit"
-            onChange={e => {
+            onClick={e => {
               //debugger;
+              //axios.post("/", { name, email, role });
             }}
           >
             Send

@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Form from './Form'
 
@@ -39,6 +38,7 @@ function App() {
   ]);
  
   const [memberToEdit, setMemberToEdit] = useState('')
+  
 
   const editMember = (member) => {
 
@@ -47,6 +47,7 @@ function App() {
     console.log("Member added to memberToEdit", memberToEdit)
     document.querySelector('#name').value = member.name
     document.querySelector("#email").value = member.email
+    
 
     //Custom function that changes a select element's option.
     function select(selectId, optionValToSelect) {
@@ -70,8 +71,6 @@ function App() {
     
 
   }
-
-
 
 // ['Asterix', 'Obelix', 'Asuranceturix', 'Panoramix', 'Ideafix']
 
