@@ -25,7 +25,7 @@ const Form = (props) => {
                           // STRETCH: STEP 3 - Add the edit functionality (STRETCH)
                           return (
                             <div className="form">
-                              <form onClick={e => e.preventDefault}>
+                              <form onSubmit={e => e.preventDefault}>
                                 <label htmlFor="name">Name: </label>
                                 <input
                                   type="text"
@@ -67,12 +67,7 @@ const Form = (props) => {
                                   </option>
                                   <option value="SEO expert">SEO expert</option>
                                 </select>
-                                <button
-                                  type="submit"
-                                  onClick={e => {
-                                  //onSubmitHandler(member);
-                                  }}
-                                >
+                                <button type="submit">
                                   Send
                                 </button>
                               </form>
