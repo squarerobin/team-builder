@@ -17,22 +17,20 @@ const Form = (props) => {
             e.preventDefault();
           }}
         >
-          <label htmlFor="name" id="name">
-            Name:{" "}
-          </label>
+          <label htmlFor="name">Name: </label>
           <input
             type="text"
             name="name"
+            id="name"
             onChange={e => {
               setName(e.target.value);
               console.log("name: ", name);
             }}
           ></input>
-          <label htmlFor="email" id="email">
-            Email:{" "}
-          </label>
+          <label htmlFor="email">Email: </label>
           <input
             type="email"
+            id="email"
             name="email"
             onChange={e => {
               setEmail(e.target.value);
@@ -40,6 +38,7 @@ const Form = (props) => {
             }}
           ></input>
           <select
+            id="roles"
             onChange={e => {
               //debugger;
               setRole(e.target.value);
@@ -47,11 +46,11 @@ const Form = (props) => {
             }}
           >
             <option>Choose a role:</option>
-            <option>Front-End Developer</option>
-            <option>Back-End Developer</option>
-            <option>Designer</option>
-            <option>UX Specialist</option>
-            <option>SEO expert</option>
+            <option value="Front-End Developer">Front-End Developer</option>
+            <option value="Back-End Developer">Back-End Developer</option>
+            <option value="Designer">Designer</option>
+            <option value="UX Specialist">UX Specialist</option>
+            <option value="SEO expert">SEO expert</option>
           </select>
           <button
             type="submit"
