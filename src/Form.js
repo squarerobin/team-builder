@@ -2,24 +2,24 @@ import React, { useState, useEffect } from "react";
 import axios from 'axios'
 
 
-
 const Form = (props) => {
                           console.log("props is: ", props);
                           const [name, setName] = useState("");
                           const [email, setEmail] = useState("");
                           const [role, setRole] = useState("");
-                          /* useEffect((e) =>  {
-    const onSubmitHandler = () => {
+
+    /* useEffect((e) =>  {
+    const onSubmitHandler = (member) => {
    debugger;
 
   
-    setMember(...members, member)
+    setMember(...props.members, member)
     axios.post("/", { name, email, role });
 
     }
-}, [email,name, role, onSubmitHandler])
+}, [email,name, role, onSubmitHandler]) */
    
-  */
+
 
                           console.log("members: ", props.members);
                           // STRETCH: STEP 3 - Add the edit functionality (STRETCH)
@@ -70,8 +70,7 @@ const Form = (props) => {
                                 <button
                                   type="submit"
                                   onClick={e => {
-                                    //debugger;
-                                    //axios.post("/", { name, email, role });
+                                  //onSubmitHandler(member);
                                   }}
                                 >
                                   Send
